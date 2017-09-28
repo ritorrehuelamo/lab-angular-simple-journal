@@ -14,8 +14,13 @@ export class JournalService {
       .map(res => res.json());
   }
 
-  get(id) {}
+  get(id) {
+    return this.http.get(`${this.BASE_URL}/api/journal-entries/${id}`)
+    .map(res => res.json());
+  }
 
-  newJournal() {}
+  newJournal() {
+
+  }
 
 }
