@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
+
 @Injectable()
 export class JournalService {
-
+  
   BASE_URL: String = 'http://localhost:3000';
 
   constructor(private http: Http) { }
@@ -19,8 +20,10 @@ export class JournalService {
     .map(res => res.json());
   }
 
-  newJournal() {
-
+  newJournal(journal) {
+    console.log('holi')
+    return this.http.post(`${this.BASE_URL}/api/journal-entries`, journal)
+    .map(res => {res.json(); console.log(res)});
   }
 
 }

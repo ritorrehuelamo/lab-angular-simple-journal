@@ -1,0 +1,9 @@
+<div class="container">
+	<form class="formJournal" (ngSubmit)="addJournal(journal)" #journal="ngForm" novalidate>
+		<label for="">Title</label>
+		<input type="text" name="title" [(ngModel)]="title"><br>
+		<label for="">Content</label>
+		<input type="text" name="content" [(ngModel)]="content" > <br>
+		<button>Submit</button>
+	</form>
+</div>
